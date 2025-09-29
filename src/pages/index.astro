@@ -1,0 +1,201 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>raediy</title>
+    <meta name="description" content="静かな下準備だけが進んでいます。" />
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+        background: radial-gradient(circle at 15% 20%, rgba(128, 200, 255, 0.09), transparent 55%),
+          radial-gradient(circle at 80% 10%, rgba(245, 160, 255, 0.05), transparent 60%),
+          linear-gradient(145deg, #05070c, #09040d);
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 1.5rem 3.5rem;
+      }
+
+      .shell {
+        max-width: 48rem;
+        width: 100%;
+        display: grid;
+        gap: 2.25rem;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 3.75rem);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: lowercase;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      h1 span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(3rem, 5vw, 3.75rem);
+        aspect-ratio: 1;
+        border-radius: 18%;
+        background: linear-gradient(135deg, rgba(111, 170, 255, 0.25), rgba(222, 153, 255, 0.15));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 14px 38px rgba(16, 25, 44, 0.55);
+        position: relative;
+      }
+
+      h1 span::before,
+      h1 span::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      h1 span::before {
+        inset: 18%;
+        opacity: 0.7;
+      }
+
+      h1 span::after {
+        inset: 32%;
+        opacity: 0.4;
+      }
+
+      h1 strong {
+        font-weight: inherit;
+      }
+
+      h1 em {
+        font-style: normal;
+        font-weight: inherit;
+        color: rgba(255, 255, 255, 0.55);
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .whisper {
+        margin: 0;
+        font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.76);
+        max-width: 36rem;
+      }
+
+      footer {
+        font-size: 0.75rem;
+        padding: 0 1.5rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.38);
+      }
+
+      footer span {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      footer svg {
+        width: 0.75rem;
+        height: 0.75rem;
+        opacity: 0.32;
+      }
+
+      .trace {
+        position: relative;
+      }
+
+      .trace a {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        text-indent: -9999px;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          padding: 3.5rem 1.5rem 2.75rem;
+        }
+
+        .shell {
+          gap: 2rem;
+        }
+
+        h1 {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        h1 span {
+          margin-bottom: 0.2rem;
+        }
+
+        h1 em {
+          letter-spacing: 0.28em;
+        }
+      }
+
+      @media (max-width: 600px) {
+        main {
+          padding: 3.25rem 1.25rem 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="shell">
+        <h1>
+          <span aria-hidden="true"></span>
+          <strong>raediy</strong>
+          <em>in preparation</em>
+        </h1>
+        <p class="whisper">
+          すべての責任ある人々のため、手元で息づく新しいカラクリが静かに鼓動しています。
+        </p>
+      </div>
+    </main>
+    <footer>
+      <div class="trace">
+        <span>
+          © {currentYear} raediy
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.7" />
+            <circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.14" />
+          </svg>
+        </span>
+        <a href="https://admin.raediy.com" aria-label="administrator"></a>
+      </div>
+    </footer>
+  </body>
+</html>
