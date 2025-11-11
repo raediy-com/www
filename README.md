@@ -16,3 +16,4 @@ npm run build
 ```
 
 The generated static files are output to the `dist/` directory. The GitHub Actions workflow at `.github/workflows/deploy.yml` builds the project and publishes the artifact to GitHub Pages.
+test
